@@ -29,7 +29,7 @@ class Server:
         return self.__dataset
 
     def indexed_dataset(self) -> Dict[int, List]:
-        """indexed by sorting position, starting at 0
+        """Dataset indexed by sorting position, starting at 0
         """
         if self.__indexed_dataset is None:
             dataset = self.dataset()
@@ -40,7 +40,8 @@ class Server:
         return self.__indexed_dataset
 
     def get_hyper_index(self, index: int = None, page_size: int = 10) -> Dict:
-        """Gets info about a given index and with a specified size.
+        """Retrieves info about a page from a given index and with a
+        specified size.
         """
         data = self.indexed_dataset()
         assert index is not None and index >= 0 and index <= max(data.keys())
