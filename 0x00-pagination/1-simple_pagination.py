@@ -1,14 +1,12 @@
 #!/usr/bin/env python3
+"""Task 1.
 """
-Task 1: Simple pagination
-"""
-from typing import List, Tuple
 import csv
-
+from typing import List, Tuple
 
 
 def index_range(page: int, page_size: int) -> Tuple[int, int]:
-    """Returns index range from a given page and page size.
+    """Returns the index range from a given page and page size.
     """
     start = (page - 1) * page_size
     end = start + page_size
@@ -37,7 +35,7 @@ class Server:
         return self.__dataset
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
-        """ Gets a page of data.
+        """Gets a page of data.
         """
         assert type(page) == int and type(page_size) == int
         assert page > 0 and page_size > 0
@@ -46,3 +44,4 @@ class Server:
         if start > len(data):
             return []
         return data[start:end]
+
