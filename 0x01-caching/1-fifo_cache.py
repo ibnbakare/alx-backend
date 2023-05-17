@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""FIFO caching module.
+"""First-In First-OUT.
 """
 from collections import OrderedDict
 
@@ -7,7 +7,7 @@ from base_caching import BaseCaching
 
 
 class FIFOCache(BaseCaching):
-    """Allows storing and getting data in FIFO
+    """FIFO.
     """
     def __init__(self):
         """Initializes the cache.
@@ -26,6 +26,6 @@ class FIFOCache(BaseCaching):
             print("DISCARD:", first_key)
 
     def get(self, key):
-        """Retrieves an item by key.
+        """Gets an item by key.
         """
         return self.cache_data.get(key, None)
