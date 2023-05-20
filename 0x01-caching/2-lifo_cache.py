@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Last-In First-Out
+"""LIFO
 """
 from collections import OrderedDict
 
@@ -7,7 +7,7 @@ from base_caching import BaseCaching
 
 
 class LIFOCache(BaseCaching):
-    """LIFO
+    """starts caching
     """
     def __init__(self):
         """Initializes the cache.
