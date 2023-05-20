@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""MRU caching
+"""MRU
 """
 from collections import OrderedDict
 
@@ -7,7 +7,8 @@ from base_caching import BaseCaching
 
 
 class MRUCache(BaseCaching):
-    """starts caching
+    """Represents an object that allows storing and
+    retrieving items from a dictionary with an MRU
     """
     def __init__(self):
         """Initializes the cache.
@@ -30,9 +31,8 @@ class MRUCache(BaseCaching):
             self.cache_data[key] = item
 
     def get(self, key):
-        """gets an item by key.
+        """GETS an item by key.
         """
         if key is not None and key in self.cache_data:
             self.cache_data.move_to_end(key, last=False)
         return self.cache_data.get(key, None)
-    
